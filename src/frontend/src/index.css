@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    /* Page background: #F3F5F7 */
+    --background: 0.966 0.005 247;
+    /* Foreground: #202124 */
+    --foreground: 0.18 0.008 264;
+    /* Card/panel: #FFFFFF */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.008 264;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.008 264;
+    /* Primary: blue accent #1A73E8 */
+    --primary: 0.52 0.2 264;
+    --primary-foreground: 1 0 0;
+    /* Secondary */
+    --secondary: 0.94 0.005 247;
+    --secondary-foreground: 0.18 0.008 264;
+    /* Muted */
+    --muted: 0.94 0.005 247;
+    --muted-foreground: 0.47 0.012 264;
+    /* Accent */
+    --accent: 0.94 0.005 247;
+    --accent-foreground: 0.18 0.008 264;
+    /* Destructive */
+    --destructive: 0.577 0.245 27;
+    --destructive-foreground: 1 0 0;
+    /* Border: #E6E8EC */
+    --border: 0.92 0.007 247;
+    --input: 0.92 0.007 247;
+    --ring: 0.52 0.2 264;
+    /* Search link blue: #1A0DAB */
+    --link-blue: 0.34 0.18 270;
+    /* URL green: #188038 */
+    --link-green: 0.54 0.15 150;
+    /* Snippet gray: #5F6368 */
+    --snippet: 0.47 0.012 264;
+    /* Charts */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "GeneralSans", "Arial", sans-serif;
+  }
+}
+
+/* Opper gradient button */
+.opper-btn {
+  background: linear-gradient(to right, #c83a5e, #f08a2b, #f3c84b);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0 20px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(200, 58, 94, 0.25);
+  transition: opacity 0.15s ease;
+}
+.opper-btn:hover {
+  opacity: 0.9;
+}
+.opper-btn:active {
+  opacity: 0.8;
+}
+
+/* Search input pill */
+.search-pill {
+  border-radius: 9999px;
+  border: 1px solid oklch(var(--border));
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
+  transition: box-shadow 0.15s;
+}
+.search-pill:focus-within {
+  box-shadow: 0 1px 10px rgba(32, 33, 36, 0.2);
+  outline: none;
+}
+
+/* Active search tab underline */
+.search-tab-active {
+  border-bottom: 3px solid #1a73e8;
+  color: #1a73e8;
+}
+
+/* Result link skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton-line {
+  background: linear-gradient(90deg, #e8eaed 25%, #f3f4f6 50%, #e8eaed 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 4px;
+}
